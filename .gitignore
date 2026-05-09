@@ -74,3 +74,4 @@ create_activity_table_temp.php
 # Node modules (if any)
 # =============================================
 node_modules/
+vendor/
