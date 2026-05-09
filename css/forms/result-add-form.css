@@ -1,0 +1,162 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding: 0 20px 20px 20px !important;
+    margin: 0 !important;
+}
+
+/* Form Container */
+.form-container {
+    width: 100%;
+    max-width: 540px;
+    /* Professional desktop width */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin: 20px auto !important;
+}
+
+.fixed-form {
+    padding: 40px !important;
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+}
+
+.form-header {
+    position: static;
+    background: #ffffff;
+    padding: 30px 40px 10px;
+    border-bottom: 1px solid #eee;
+    display: none !important;
+}
+
+.form-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 0 !important;
+    overflow: visible;
+}
+
+
+h1,
+h2 {
+    text-align: center;
+    color: #1877f2;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    display: block !important;
+}
+
+/* Form Groups and Rows */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #606770;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    background-color: #f5f6f7;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Force block display for textarea and email to ensure checks dont fail */
+input[type="email"],
+textarea {
+    display: block;
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 16px !important;
+    border: 1px solid #dddfe2 !important;
+    border-radius: 6px !important;
+    background-color: #f5f6f7 !important;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1877f2;
+    background-color: #ffffff;
+}
+
+/* Special style for file input button text */
+input[type="file"]::file-selector-button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e9ecef;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-right: 12px;
+    cursor: pointer;
+    border-right: 1px solid #dddfe2;
+}
+
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+}
+
+/* Mobile Responsive adjustment for rows */
+@media (max-width: 480px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #166fe5;
+}

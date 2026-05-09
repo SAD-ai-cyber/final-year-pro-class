@@ -1,0 +1,2 @@
+2026-03-09 13:05:05 Worker triggered via POPEN: start /B "" "php" "C:\xampp\htdocs\Final-year-pro\Final-year-pro\includes/notification_email_worker.php" > NUL 2>&1
+2026-03-24 14:44:48 Worker triggered via POPEN: start /B "" "php" "C:\xampp\htdocs\Final-year-pro\includes/notification_email_worker.php" > NUL 2>&1

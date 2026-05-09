@@ -1,0 +1,76 @@
+# =============================================
+# Python Virtual Environment (face attendance)
+# =============================================
+face_attendance_env/
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled Python Extensions
+*.so
+
+# Python distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# =============================================
+# OS Generated Files
+# =============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =============================================
+# IDE / Editor Files
+# =============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =============================================
+# AI Assistant Files (Antigravity/Gemini)
+# =============================================
+.gemini/
+
+# =============================================
+# Log Files (runtime generated)
+# =============================================
+*.log
+material_upload/auth_debug.log
+material_upload/email_debug.log
+
+# =============================================
+# User Uploaded Files (runtime data)
+# =============================================
+material_upload/student_photo/
+material_upload/teacher_photo/
+material_upload/parent_photo/
+material_upload/course_photo/
+material_upload/event_data/
+material_upload/receipts/
+
+# =============================================
+# Temp / Test / Auto-Generated Files
+# =============================================
+folder_tree.txt
+test_email.php
+test_email_simple.php
+create_activity_table_temp.php
+
+# =============================================
+# Environment Variables
+# =============================================
+.env
+.env.local
+.env.production
+
+# =============================================
+# Node modules (if any)
+# =============================================
+node_modules/

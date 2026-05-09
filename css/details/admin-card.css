@@ -1,0 +1,162 @@
+
+:root {
+    --primary-color: #4361ee;      
+    --secondary-color: #f8f9fa;    
+    --text-dark: #2b2d42;          
+    --text-light: #6c757d;         
+    --border-color: #e9ecef;       
+    --success-color: #2ecc71;      
+    --danger-color: #e74c3c;       
+    --warning-color: #f1c40f;      
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #edf2f4;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 30px;
+}
+
+/* Fixed header + scrollable body (scoped) */
+.fixed-scroll-page {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.fixed-scroll-page .fixed-scroll-card {
+    display: block;
+}
+
+.fixed-scroll-page .fixed-scroll-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.fixed-scroll-page .card-body {
+    max-height: calc(100vh - 160px);
+    overflow: auto;
+}
+
+.fixed-scroll-page .details-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f8f9fa;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+/*  HEADER  */
+.card-header {
+    /* background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%); */
+       background-color: #919ac1;
+    padding: 20px 30px;
+    color: white;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* TABLE STYLING  */
+.card-body {
+    padding: 0;
+    overflow-x: auto;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+/* Headers */
+.details-table thead tr {
+    background-color: #f8f9fa;
+}
+
+.details-table th {
+    padding: 15px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-color);
+    text-align: left;
+}
+
+
+.details-table td {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+
+.details-table tbody tr:nth-of-type(even) { background-color: #fcfcfc; }
+.details-table tbody tr:hover { background-color: #eef2ff; transition: 0.2s; }
+
+/*  5. INPUT FIELDS  */
+.details-table input[type="text"],
+.details-table input[type="date"],
+.details-table input[type="time"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.details-table input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+/* ACTION BUTTONS  */
+.action-buttons {
+    white-space: nowrap;
+}
+
+.action-buttons a,
+.action-buttons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 8px;
+    margin: 0 2px;
+    border-radius: 50%; 
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+}
+
+/* Colors for Buttons */
+.btn-edit { color: var(--warning-color); background-color: rgba(241, 196, 15, 0.1); }
+.btn-edit:hover { background-color: var(--warning-color); color: white; }
+
+.btn-delete, .btn-cancel { color: var(--danger-color); background-color: rgba(231, 76, 60, 0.1); }
+.btn-delete:hover, .btn-cancel:hover { background-color: var(--danger-color); color: white; }
+
+button[name="save_btn"] { color: var(--success-color); background-color: rgba(46, 204, 113, 0.1); }
+button[name="save_btn"]:hover { background-color: var(--success-color); color: white; }

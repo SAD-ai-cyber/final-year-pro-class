@@ -1,0 +1,191 @@
+<?php
+require '../includes/config.php';
+require '../includes/security.php';
+require '../includes/notification_helper.php';
+
+// Security/session bootstrap.
+start_secure_session();
+// Apply security headers for this request.
+apply_security_headers();
+// Enforce role-based access control.
+require_role(['admin']);
+$csrf_token = generate_csrf_token();
+
+
+//  Kya URL me 'delete_id' ye kya dekhega 
+if (isset($_GET['delete_id'])) {
+    if (!verify_csrf_token($_GET['csrf_token'] ?? '')) {
+        die('Invalid CSRF token.');
+    }
+
+    $id = (int)$_GET['delete_id'];
+
+    deleteLatestNotificationForUser(
+        $con,
+        'admin',
+        1,
+        'New Contact Enquiry',
+        'A new contact enquiry has been received from the website.',
+        'show-details/show-contact-student-details.php'
+    );
+
+    // Database se wo row delete kar dega
+    $stmt = mysqli_prepare($con, "DELETE FROM contact_demo_student WHERE Student_Id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    // Page refresh kar rega
+    header("Location: show-contact-student-details.php");
+}
+
+
+//  Kya User ne 'save_btn' dabaya hai? 
+if (isset($_POST['save_btn'])) {
+    if (!verify_csrf_token($_POST['csrf_token'] ?? '')) {
+        die('Invalid CSRF token.');
+    }
+
+    // Hidden ID le rahe hai taaki pata chale kis student ka data hai
+    $id = (int)$_POST['id'];
+
+    // Form se naya data variables me store kiya
+    $s_name = $_POST['sname'];
+    $s_email = $_POST['semail'];
+    $s_num = $_POST['snum'];
+    $subject = $_POST['subject'];
+    $enq_mess = $_POST['enqmess'];
+    
+    
+
+    // Update query 
+    $update_query = "UPDATE contact_demo_student SET 
+                    student_name =?, 
+                    student_email =?, 
+                     student_num =?, 
+                    subject_name =?, 
+                     enq_message =?
+                     
+                     WHERE Student_Id=?";
+
+    $stmt = mysqli_prepare($con, $update_query);
+    mysqli_stmt_bind_param($stmt, "sssssi", $s_name, $s_email, $s_num, $subject, $enq_mess, $id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+
+    header("Location: show-contact-student-details.php");
+}
+
+//  data lene keliye query chalayi
+$query = "SELECT * FROM contact_demo_student";
+// execute kiya query ko
+$data = mysqli_query($con, $query);
+// table me kitne number of data row he vo store kiya
+$total = mysqli_num_rows($data);
+?>
+
+
+<html>
+
+<head>
+    <title>Contact Student Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+    <!--  php echo time();  har second URL ko badal deta hai-->
+     <link rel="stylesheet" href="../css/details/class-function.css?v=<?php echo time(); ?>">
+</head>
+
+<body class="fixed-scroll-page">
+    <div class="card fixed-scroll-card">
+        <div class="card-header fixed-scroll-header">
+            <h2 class="card-title">Contact Student Details</h2>
+        </div>
+
+        <form action="" method="POST">
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
+
+            <div class="card-body">
+                <table class="details-table">
+                    <thead>
+                        <tr>
+                            <th>Student Id </th>
+                            <th>Student Name</th>
+                            <th>Student Email</th>
+                            <th>Student Number</th>
+                            <th>Subject Name</th>
+                            <th>Enq Message</th>
+                            <th>Upload At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        if ($total > 0) {
+                            while ($result = mysqli_fetch_assoc($data)) {
+
+                                //  Kya hume is row ko Edit karna hai?
+                                if (isset($_GET['edit_id']) && $_GET['edit_id'] == $result['Student_Id']) {
+
+                                    //   edit karne keliye input box dale 
+                                    echo "<tr>
+                            <td>
+                                " . $result['Student_Id'] . "
+                                <input type='hidden' name='id' value='" . $result['Student_Id'] . "'>
+                            </td>
+                            <td><input type='text' name='sname' value='" . $result['student_name'] . "'></td>
+                            <td><input type='email' name='semail' value='" . $result['student_email'] . "'></td>
+                            <td><input type='tel' name='snum' maxlength='10' value=' " . $result['student_num'] . "'></td>
+                            <td><input type='text' name='subject' value='" . $result['subject_name'] . "'></td>
+                            <td><input type='text' name='enqmess' value='" . $result['enq_message'] . "'></td>
+                            <td>" . $result['created_at'] . "</td>
+                            
+                            <td class='action-buttons'>
+                                <button type='submit' name='save_btn' title='Save Changes'>
+                                    <i class='fa-solid fa-check'></i>
+                                </button>
+                                
+                                <a href='show-contact-student-details.php' title='Cancel' class='btn-cancel'>
+                                    <i class='fa-solid fa-xmark'></i>
+                                </a>
+                            </td>
+                        </tr>";
+
+                                } else {
+
+                                    //data show kiya 
+                                    echo "<tr>
+                            <td>" . $result['Student_Id'] . "</td>
+                            <td>" . $result['student_name'] . "</td>
+                            <td>" . $result['student_email'] . "</td>
+                            <td>" . $result['student_num'] . "</td>
+                            <td>" . $result['subject_name'] . "</td>
+                            <td>" . $result['enq_message'] . "</td>
+                            <td>" . $result['created_at'] . "</td>
+                            
+                        
+                            <td class='action-buttons'>
+                                <a href='show-contact-student-details.php?edit_id=" . $result['Student_Id'] . "' class='btn-edit' title='Edit'>
+                                    <i class='fa-solid fa-pen-to-square'></i>
+                                </a>
+
+                                <a href='show-contact-student-details.php?delete_id=" . $result['Student_Id'] . "&csrf_token=" . urlencode($csrf_token) . "' class='btn-delete' onclick='return confirm(\"Are you sure you want to delete?\")' title='Delete'>
+                                    <i class='fa-solid fa-trash'></i>
+                                </a>
+                            </td>
+                        </tr>";
+                                }
+                            }
+                        } else {
+                            echo "<tr><td colspan='10' style='text-align:center;'>No Records Found</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

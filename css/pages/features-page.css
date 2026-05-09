@@ -1,0 +1,47 @@
+/* ==================================================
+   FEATURES PAGE STYLES
+================================================== */
+
+/* Page Banner is already styled from services page */
+
+/* Feature Card Styles */
+.feature-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    height: 100%;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #2563EB;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card .icon-container {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    background: linear-gradient(45deg, #e3f2fd, #dbe9fa);
+    color: #2563EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+/* Feature Spotlight Section */
+.feature-list li {
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+}
+
+.feature-list .fa-circle-check {
+    margin-top: 5px;
+}

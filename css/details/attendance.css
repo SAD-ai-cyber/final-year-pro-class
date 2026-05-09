@@ -1,0 +1,118 @@
+/* Variable definitions for colors and styles */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f7fa;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --present-color: #28a745;
+    --absent-color: #dc3545;
+    --warning-color: #ffc107;
+}
+
+/* Basic body styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main card container */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card header */
+.card-header {
+    padding: 20px 25px;
+    background-color: #fafafa;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    text-align: center;
+}
+
+/* Card body with table */
+.card-body {
+    padding: 25px;
+    overflow-x: auto; /* Responsive table */
+}
+
+/* Table styling */
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.details-table th, .details-table td {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.details-table th {
+    font-weight: 600;
+    color: #555;
+    background-color: #f9f9f9;
+}
+
+.details-table td:nth-child(2) {
+    text-align: left;
+}
+
+.details-table tbody tr:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Attendance status styling */
+.status {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    font-size: 0.9em;
+}
+
+.status.present { background-color: var(--present-color); }
+.status.absent { background-color: var(--absent-color); }
+
+.total-attendance { font-weight: bold; }
+
+/* Edit/Delete buttons inside the table */
+.action-buttons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-edit { color: var(--warning-color); }
+.btn-edit:hover { background-color: #fff8e1; }
+
+.btn-delete { color: var(--danger-color); }
+.btn-delete:hover { background-color: #fbe9e7; }
+

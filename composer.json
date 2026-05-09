@@ -1,0 +1,7 @@
+{
+  "name": "final-year-pro/student-import",
+  "description": "Student import and email notifications",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}

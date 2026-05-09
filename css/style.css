@@ -1,0 +1,827 @@
+* {
+    font-family: "Inter", sans-serif;
+    user-select: none;
+}
+
+/* navbar css */
+
+.navbar {
+    background-color: rgb(249, 249, 249);
+    height: 70px;
+    border-radius: 16px;
+    padding: 0.5rem;
+
+}
+
+.brand-logo img {
+    height: 52px;
+
+}
+
+.login-button select {
+    background-color: #009970;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+}
+
+
+
+/* nav items ke niche green line layega */
+@media (min-width: 991px) {
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+
+}
+
+/* ======================= Notification Bell CSS Start ======================= */
+
+/* Bell Icon Wrapper */
+.notification-bell {
+    position: relative;
+    font-size: 24px;
+    color: #555;
+    margin-right: 15px;
+    /* Space between bell and login button */
+    display: inline-block;
+}
+
+/* Red Dot Badge */
+.notification-badge {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Dropdown Panel */
+.notification-dropdown {
+    width: 350px;
+    padding: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin-top: 15px !important;
+
+
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -140px;
+
+}
+
+/* Header of the Dropdown */
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.notification-header h6 {
+    font-weight: 600;
+}
+
+.notification-header a {
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* Notification List with Custom Scrollbar */
+.notification-list {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar Styling */
+.notification-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notification-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.notification-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.notification-list::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* Individual Notification Item */
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa;
+}
+
+.notification-item:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Notification Icon Circle */
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* Icon Colors */
+.notification-icon.icon-success {
+    background-color: #2ecc71;
+}
+
+.notification-icon.icon-warning {
+    background-color: #f39c12;
+}
+
+.notification-icon.icon-info {
+    background-color: #3498db;
+}
+
+.notification-icon.icon-danger {
+    background-color: #e74c3c;
+}
+
+/* Notification Text and Timestamp */
+.notification-text p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 2px;
+}
+
+.notification-text span {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Dropdown Footer */
+.notification-footer {
+    padding: 12px 16px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.notification-footer a {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* ======================= Notification Bell CSS End ======================= */
+
+/* end navbar css */
+
+/* second box css */
+.bannercontent h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.bannercontent p {
+    font-size: 22px;
+}
+
+.bannercontent h1 span {
+    color: #2699FB;
+    background: url(../photo/border.png) no-repeat bottom;
+}
+
+.bannercontent ul {
+    list-style: none;
+    font-size: 22px;
+
+}
+
+.bannercontent ul li i {
+    color: #2699FB;
+
+}
+
+.bannercontenbtn button {
+    width: 50%;
+    padding: 10px 0px;
+    border-radius: 6px;
+}
+
+.bannercontenbtn button:first-child {
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+    color: white;
+
+}
+
+.bannerForm {
+    padding: 40px;
+    border-radius: 13px;
+}
+
+.bannerForm h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.formbtn {
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 0px;
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+    width: 100%;
+}
+
+.counterSection h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2699FB;
+}
+
+/* end 2nd box css */
+
+/* 3rd box css */
+.highlights-sections {
+    background-color: #F7FAFF;
+}
+
+.highlights-sections h2 {
+    font-weight: 700;
+    font-size: 36px;
+    color: #0A2134;
+}
+
+.highlights-sections p {
+    font-size: 18px;
+    color: #0A2134;
+}
+
+.highlightsItems h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.highlightsItems p {
+    font-size: 15px;
+
+}
+
+.highlg-button button {
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+    color: white;
+    padding: 16px 48px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* end 3rd box css */
+
+/* 4th box css */
+.careersec h3 {
+    font-weight: 700;
+    font-size: 44px;
+    color: #0A2134;
+}
+
+.careersec p {
+    font-size: 18px;
+    color: #0A2134;
+}
+
+.careersec-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.careersec-item p {
+    font-size: 15px;
+}
+
+/* end 4th box css */
+
+/* 5th box css */
+.certificate img{
+    height: 586px;
+    width: 441px;
+    object-fit: cover;
+}
+
+.certificate-sec {
+    background-color: #F7FAFF;
+}
+
+.box-1 h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0A2134;
+}
+
+.box-1 p {
+    font-size: 18px;
+}
+
+.cerItems {
+    border-radius: 8px;
+}
+
+.cerItems h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cerItems p {
+    font-size: 16px;
+}
+
+.cerbutton {
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+    color: white;
+    padding: 16px 48px;
+    border-radius: 8px;
+
+}
+
+/* .certificate{
+    
+position: relative;
+}
+
+.certificate .topleft{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+} */
+/* end 5th box css */
+
+/* 6th box css */
+.dg-col h2 {
+    font-size: 44px;
+    font-weight: 700;
+    color: #0A2134;
+
+}
+
+.dg-col p {
+    font-size: 18px;
+}
+
+.dg-ul ul {
+    list-style: none;
+}
+
+.dg-ul ul li a {
+    color: #0A2134;
+}
+
+.digtal-ul ul {
+    list-style: none;
+    font-size: 22px;
+}
+
+.dg-button button {
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+    color: white;
+    padding: 16px 43px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.studentsec h4 {
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.studentsec p {
+    font-size: 15px;
+}
+
+/* end 7th box css */
+
+/*  8th box css */
+.poppup {
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+    border-radius: 10px;
+
+
+}
+
+.pop-1 {
+    background: url(../photo/popupimg-1.png) no-repeat left;
+}
+
+/* .pop-2{
+     background: url(../photo/popupimg-2.png)no-repeat right; 
+
+} */
+.poppup h4 {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 44px;
+}
+
+.poppup p {
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.poppup-button button {
+    background-color: white;
+    padding: 16px 43px;
+    font-size: 18px;
+    border-radius: 8px;
+
+}
+
+
+/* 9th box */
+
+.our-course {
+    background-color: #F7FAFF;
+}
+
+.our-course img {
+    width: 89%;
+    object-fit: cover;
+    height: 146px;
+    text-align: center;
+
+}
+
+.list {
+    border-radius: 20px;
+}
+
+
+/* chatbot css start  */
+
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+            }
+        }
+
+        /* Floating Chat Icon css */
+        #chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #2563EB, #3B82F6);
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            animation: pulse 2s infinite;
+            z-index: 1000;
+        }
+
+        #chatbot-icon:hover {
+            transform: scale(1.1);
+            animation-play-state: paused;
+        }
+
+        /* Chatbot Container css */
+        #chatbot-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 450px;
+            background-color: #c0b5b5;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.5);
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform-origin: bottom right;
+            z-index: 1000;
+        }
+
+        #chatbot-container:not(.hidden) {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Chatbot Header css */
+        #chatbot-header {
+            background-color: #2563EB;
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+        }
+
+
+        #close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Chatbot Body */
+        #chatbot-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        #chatbot-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+        .message {
+            padding: 12px;
+            border-radius: 18px;
+            max-width: 85%;
+            line-height: 1.4;
+            word-wrap: break-word;
+             overflow-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .message.user {
+            background-color: #2563EB;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot {
+            background-color: #333;
+            color: white;
+            align-self: flex-start;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .bot-icon {
+            font-size: 20px;
+            padding-top: 5px;
+        }
+
+        .message-text {
+            flex: 1;
+        }
+
+        .message-text i {
+            opacity: 0.7;
+        }
+
+        .message img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 8px;
+        }
+
+
+        /* Input Section Styling */
+        #chatbot-input-container {
+            border-top: 1px solid #444;
+            background-color: #2c2c2c;
+        }
+
+        #file-preview {
+            padding: 5px 15px;
+            font-size: 12px;
+            color: #ccc;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            background-color: #333;
+        }
+
+
+        #file-preview img {
+            max-width: 25px;
+            max-height: 25px;
+            border-radius: 4px;
+        }
+
+        #remove-file-btn {
+            cursor: pointer;
+            color: #ff5555;
+            font-size: 14px;
+            margin-left: auto;
+        }
+
+        .main-input-area {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+        }
+
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            background-color: #333;
+            border-radius: 22px;
+            min-height: 45px;
+            padding: 0 5px 0 15px;
+        }
+
+        /* image pasting part css*/
+        #chatbot-input {
+            flex: 1;
+            border: none;
+            background-color: transparent;
+            color: white;
+            outline: none;
+            font-size: 16px;
+            max-height: 100px;
+            overflow-y: auto;
+            padding: 12px 0;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+
+
+        #chatbot-input:empty:before {
+            content: "Message or paste image...";
+            color: #888;
+            cursor: text;
+        }
+
+        .input-icon-btn {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .input-icon-btn:hover {
+            color: #fff;
+        }
+
+        #send-btn {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            background-color: #2563EB;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #send-btn:hover {
+            background-color: #1D4ED8;
+        }
+
+        .uploaded-file-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 16px;
+            font-size: 14px;
+            margin-top: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+
+
+        /* Your Original Responsive Design */
+        @media screen and (max-width: 480px) {
+            #chatbot-container {
+                width: 85%;
+                height: 76%;
+                bottom: 26px;
+                left: 23px;
+                right: auto;
+                top: auto;
+                transform-origin: bottom left;
+            }
+
+            #chatbot-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .input-icon-btn {
+                font-size: 13px;
+                padding: 4px;
+            }
+
+            #chatbot-input {
+                font-size: 13px;
+            }
+
+            #send-btn {
+                width: 39px;
+                height: 39px;
+                font-size: 18px;
+            }
+        }

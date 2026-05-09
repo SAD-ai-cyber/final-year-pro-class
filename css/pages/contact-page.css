@@ -1,0 +1,198 @@
+        /* General Body Styling: Poppins aur Inter fonts ka use */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Hero Section ka style, jisme page ka title aur description hai */
+        .contact-hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #e9f5ff, #f2f7fa);
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: #0A2134;
+            margin-bottom: 20px;
+        }
+
+        .contact-hero p {
+            font-size: 20px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Contact content section ka style, jisme form aur info cards hain */
+        .contact-content-section {
+            padding: 80px 0;
+        }
+
+        .contact-info-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            padding: 40px;
+            height: 100%;
+        }
+
+        .contact-info-card .info-item {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info-card .info-item i {
+            font-size: 30px;
+            color: #2699FB;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-card .info-item h5 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .contact-info-card .info-item p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Contact Form Section ka style */
+        .contact-form-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            padding: 40px;
+            height: 100%;
+        }
+
+        .contact-form-card h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0A2134;
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            border-radius: 8px;
+            border-color: #ddd;
+            padding: 12px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #2699FB;
+            box-shadow: 0 0 0 0.25rem rgba(38, 153, 251, 0.25);
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .btn-submit {
+            background-color: #2699FB;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(38, 153, 251, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #1a7ad6;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(38, 153, 251, 0.4);
+        }
+
+        /* Map Section ka style */
+        .map-section {
+            padding-bottom: 80px;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            height: 500px;
+            position: relative; /* Map container ko relative position dein */
+        }
+        
+        /* Map ke upar address box ka style */
+        .address-overlay {
+            position: absolute; /* Absolute position dein taaki map ke upar aaye */
+            top: 10px;
+            left: 9px;
+            background-color: #fff; /* White background taaki text clearly dikhe */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 300px;
+            z-index: 10; /* Map se upar dikhe */
+        }
+
+        .address-overlay h6 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0A2134;
+            margin-bottom: 5px;
+        }
+        
+        .address-overlay p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Responsive Styles, mobile screen ke liye */
+        @media (max-width: 991px) {
+            .contact-hero h1 {
+                font-size: 40px;
+            }
+            .contact-info-card, .contact-form-card {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .address-overlay {
+                max-width: 90%;
+                left: 5%;
+            }
+        }
+
+
+            .brand-logo img {
+               height: 42px;
+            }

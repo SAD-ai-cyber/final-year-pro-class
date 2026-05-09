@@ -1,0 +1,96 @@
+:root {
+    --primary-color: #4361ee;      
+    --secondary-color: #f8f9fa;    
+    --text-dark: #2b2d42;          
+    --text-light: #6c757d;         
+    --border-color: #e9ecef;       
+    --success-color: #2ecc71;      
+    --danger-color: #e74c3c;       
+    --warning-color: #f1c40f;      
+    --header-bg: #919ac1; /* Purple Header Color */
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #edf2f4;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+/* HEADER */
+.card-header {
+    background-color: var(--header-bg);
+    padding: 20px 30px;
+    color: white;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* TABLE STYLING */
+.card-body {
+    padding: 0;
+    overflow-x: auto;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+/* Headers */
+.details-table thead tr {
+    background-color: #f8f9fa;
+}
+
+.details-table th {
+    padding: 15px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-color);
+    text-align: left;
+}
+
+.details-table td {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.details-table tbody tr:nth-of-type(even) { background-color: #fcfcfc; }
+.details-table tbody tr:hover { background-color: #eef2ff; transition: 0.2s; }
+
+/* Status Colors */
+.text-success { color: var(--success-color); font-weight: bold; }
+.text-warning { color: #d35400; font-weight: bold; }
+.text-danger { color: var(--danger-color); font-weight: bold; }
+
+/* Action Links */
+.view-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.view-link:hover {
+    text-decoration: underline;
+}

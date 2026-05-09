@@ -1,0 +1,197 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Form Container */
+.form-container {
+    width: 100%;
+    max-width: 900px;
+    /* ? Increased from 600px to 900px */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.fixed-form {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+}
+
+.form-header {
+    position: static;
+    background: #ffffff;
+    padding: 30px 40px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 20px 40px 30px;
+    overflow: visible;
+}
+
+h1 {
+    text-align: center;
+    color: #1877f2;
+    margin-bottom: 30px;
+}
+
+/* Form Groups and Rows */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #606770;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    background-color: #f5f6f7;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #1877f2;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+/* Schedule Grid Styles */
+.schedule-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.grid-header,
+.grid-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 240px 140px;
+    /* ? Better spacing: Day | Subject | Time | Lab */
+    gap: 15px;
+    align-items: center;
+}
+
+.grid-header {
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dddfe2;
+    color: #333;
+    font-size: 14px;
+    /* ? Slightly smaller for better fit */
+    text-align: left;
+}
+
+.grid-header span {
+    white-space: normal;
+    /* ? Allow text wrapping if needed */
+    line-height: 1.3;
+}
+
+.grid-row {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.day-label {
+    font-weight: 500;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #166fe5;
+}
+
+.time-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.time-group input {
+    width: 110px;
+}
+
+/* Responsive Styles for the Grid */
+@media (max-width: 768px) {
+    .grid-header {
+        display: none;
+        /* Hide header on mobile */
+    }
+
+    .grid-row {
+        grid-template-columns: 1fr;
+        /* Stack everything vertically */
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .day-label {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #1877f2;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    /* Add labels for context on mobile */
+    .grid-row select:first-of-type::before {
+        content: 'Module: ';
+    }
+}

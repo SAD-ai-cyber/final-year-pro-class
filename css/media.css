@@ -1,0 +1,177 @@
+@media only screen and (min-width:200px) and (max-width:575px){
+   
+   .bannercontent h1{
+    font-size: 28px;
+    font-weight:700;
+    text-align: center;
+    line-height: 35px; /* 2 line ke bich gap layega */
+    font-family: sans-serif;
+
+    }
+
+    .bannercontent br{
+        display: none;    /*br tag gayb ho jayega jab mobile screen hogi   */
+        /* font-size: 30px; */
+    }
+
+    .bannercontent p,.bannercontent ul{
+        font-size: 16px;
+    }
+    
+    .bannercontenbtn {
+    flex-direction: column;
+    /* flex-direction: column; ye property dene se ek button uper ek niche aagya */ 
+    }
+
+    .bannercontenbtn button{
+        width: 100%;
+    }
+
+    .bannerForm{
+         padding: 20px;
+    }   
+
+    .counterSection  {
+        text-align: center;
+        width: 100%;
+    }
+
+    .highlights-sections h2{
+       font-size: 28px;
+       text-align: center;
+       }
+    
+    .highlg-button button{
+        padding: 13px 40px;
+        border-radius: 8px;
+        font-size: 15px;
+        }
+
+    .careersec h3{
+        font-size: 30px;
+        }
+
+    .careersec p{
+        font-size: 15px;
+        }
+    
+    
+    .box-1 h2 {
+         font-size: 33px;
+        font-weight:700;
+        text-align: center;
+         
+    }
+    .box-1 p{
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    .cerbutton{
+               padding: 13px 40px;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+
+    .certificate img{
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+
+    .dg-col h2 {
+    font-size: 26px;
+    }
+
+    .dg-ul  ul{
+        /* flex-direction: column; */
+         margin-bottom: 25px;
+    overflow-x: auto;
+    }
+
+    .digtal-ul ul {
+        font-size: 16px;
+    }
+    
+    .dg-button button{
+        padding: 14px 26px;
+    }
+    .poppup h4{
+        font-size: 33px;
+    }
+    .poppup-button button{
+         padding: 14px 26px;
+    }
+    
+    .brand-logo img{
+    height: 36px;
+    }
+
+    .notification-bell {
+    font-size: 18px;
+    margin-right: 16px;
+    }
+
+    .login-button select {
+    font-size: 12px;
+    padding: 8px 20px;
+        }
+    
+    .dropdown-menu[data-bs-popper] {
+    left: -148px;
+    width: 306px;
+    height: auto;
+        }
+}
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1170px;
+    }
+}
+
+
+/* chatbot media css start */
+
+  
+     @media screen and (max-width: 480px) {
+     /* chatbot media css start */
+
+     #chatbot-container {
+        /* Your new custom dimensions and position */
+        width: 85%;
+        height: 76%;
+        bottom: 26px;
+        left: 23px;
+        
+        /* Unsetting desktop properties */
+        right: auto;
+        top: auto;
+
+        /* Animation for a floating window */
+        transform-origin: bottom left;
+    }
+    
+    #chatbot-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .input-icon-btn {
+    font-size: 13px;
+    padding: 4px;
+    }
+
+    #chatbot-input {
+       font-size: 13px;
+    }
+
+    #send-btn {
+    width: 39px;
+    height: 39px;
+    font-size: 18px;
+    }
+}
